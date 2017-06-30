@@ -19,8 +19,8 @@ namespace EnigmaSharp
         public string Name { get; private set; }
         public string Caption { get; private set; }
         public string CreationCode { get; private set; }
-        public int Width { get; private set; }
-        public int Height { get; private set; }
+        public short Width { get; private set; }
+        public short Height { get; private set; }
         public int Speed { get; private set; }
         public bool Persistent { get; private set; }
         public GridProperties Grid { get; private set; }

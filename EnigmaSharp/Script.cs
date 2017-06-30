@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace EnigmaSharp
 {
-    class Script
+    public class Script
     {
         public string Name { get; private set; }
         public string Contents { get; private set; }
+
+        public void SetName(string PassedName)
+        {
+            Name = PassedName;
+        }
     }
 }
