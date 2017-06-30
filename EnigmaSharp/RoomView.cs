@@ -8,10 +8,12 @@ namespace EnigmaSharp
 {
     class RoomView
     {
+        // Structure to store the view's vectors
         public struct Vectors
         {
             public int X, Y, Width, Height;
         }
+
         public bool VisibleOnRoomStart { get; private set; }
         public Vectors ViewInRoom { get; private set; }
         public Vectors PortOnScreen { get; private set; }
