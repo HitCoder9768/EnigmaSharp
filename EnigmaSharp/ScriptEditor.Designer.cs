@@ -34,13 +34,16 @@
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.TextBoxBody = new System.Windows.Forms.TextBox();
+            this.CodeEditorScintilla = new ScintillaNET.Scintilla();
             this.ToolStripMain = new System.Windows.Forms.ToolStrip();
-            this.ButtonAccept = new System.Windows.Forms.ToolStripButton();
+            this.AcceptButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.TextBoxName = new System.Windows.Forms.ToolStripTextBox();
+            this.NameTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.CloseButton = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.LineNumberPositionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripMain.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -79,46 +82,55 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(284, 261);
             // 
-            // TextBoxBody
+            // CodeEditorScintilla
             // 
-            this.TextBoxBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBoxBody.Location = new System.Drawing.Point(0, 25);
-            this.TextBoxBody.Multiline = true;
-            this.TextBoxBody.Name = "TextBoxBody";
-            this.TextBoxBody.Size = new System.Drawing.Size(284, 236);
-            this.TextBoxBody.TabIndex = 1;
+            this.CodeEditorScintilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CodeEditorScintilla.CaretLineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(220)))));
+            this.CodeEditorScintilla.CaretLineVisible = true;
+            this.CodeEditorScintilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeEditorScintilla.IndentationGuides = ScintillaNET.IndentView.Real;
+            this.CodeEditorScintilla.Location = new System.Drawing.Point(0, 25);
+            this.CodeEditorScintilla.Name = "CodeEditorScintilla";
+            this.CodeEditorScintilla.Size = new System.Drawing.Size(284, 214);
+            this.CodeEditorScintilla.TabIndex = 1;
+            this.CodeEditorScintilla.TabWidth = 8;
+            this.CodeEditorScintilla.UseTabs = true;
+            this.CodeEditorScintilla.UpdateUI += new System.EventHandler<ScintillaNET.UpdateUIEventArgs>(this.CodeEditorScintilla_UpdateUI);
+            this.CodeEditorScintilla.TextChanged += new System.EventHandler(this.CodeEditorScintilla_TextChanged);
             // 
             // ToolStripMain
             // 
             this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ButtonAccept,
+            this.AcceptButton,
             this.toolStripSeparator1,
-            this.TextBoxName,
+            this.NameTextBox,
             this.CloseButton});
             this.ToolStripMain.Location = new System.Drawing.Point(0, 0);
             this.ToolStripMain.Name = "ToolStripMain";
             this.ToolStripMain.Size = new System.Drawing.Size(284, 25);
             this.ToolStripMain.TabIndex = 2;
             // 
-            // ButtonAccept
+            // AcceptButton
             // 
-            this.ButtonAccept.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonAccept.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAccept.Image")));
-            this.ButtonAccept.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonAccept.Name = "ButtonAccept";
-            this.ButtonAccept.Size = new System.Drawing.Size(23, 22);
-            this.ButtonAccept.Text = "toolStripButton1";
+            this.AcceptButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AcceptButton.Image = ((System.Drawing.Image)(resources.GetObject("AcceptButton.Image")));
+            this.AcceptButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AcceptButton.Name = "AcceptButton";
+            this.AcceptButton.Size = new System.Drawing.Size(23, 22);
+            this.AcceptButton.Text = "toolStripButton1";
+            this.AcceptButton.ToolTipText = "Save changes";
+            this.AcceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // TextBoxName
+            // NameTextBox
             // 
-            this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(100, 25);
-            this.TextBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(140, 25);
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // CloseButton
             // 
@@ -132,18 +144,38 @@
             this.CloseButton.ToolTipText = "Close";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LineNumberPositionLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 239);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(284, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // LineNumberPositionLabel
+            // 
+            this.LineNumberPositionLabel.Name = "LineNumberPositionLabel";
+            this.LineNumberPositionLabel.Size = new System.Drawing.Size(102, 17);
+            this.LineNumberPositionLabel.Text = "selected/max: pos";
+            // 
             // ScriptEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.TextBoxBody);
+            this.Controls.Add(this.CodeEditorScintilla);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ToolStripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScriptEditor";
             this.Text = "ScriptEditor";
+            this.Load += new System.EventHandler(this.ScriptEditor_Load);
             this.ToolStripMain.ResumeLayout(false);
             this.ToolStripMain.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,11 +188,13 @@
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.TextBox TextBoxBody;
+        private ScintillaNET.Scintilla CodeEditorScintilla;
         private System.Windows.Forms.ToolStrip ToolStripMain;
-        private System.Windows.Forms.ToolStripButton ButtonAccept;
+        private System.Windows.Forms.ToolStripButton AcceptButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripTextBox TextBoxName;
+        private System.Windows.Forms.ToolStripTextBox NameTextBox;
         private System.Windows.Forms.ToolStripButton CloseButton;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel LineNumberPositionLabel;
     }
 }

@@ -15,5 +15,10 @@ namespace EnigmaSharp
         {
             Name = PassedName;
         }
+
+        public void SetContents(string Content)
+        {
+            Contents = Content;
+        }
     }
 }
