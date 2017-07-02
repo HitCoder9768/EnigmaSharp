@@ -16,9 +16,9 @@ namespace EnigmaSharp
         public bool TransparencyPixel { get; private set; }
         public bool SeparateMasks { get; private set; }
         public Point Origin { get; private set; }
-        public byte CollisionChecking { get; private set; }
-        public byte BoundingBoxType { get; private set; }
-        public Box BoundingBox { get; private set; }
+        public Enigma.SpriteMaskShapes CollisionCheckingMode { get; private set; }
+        public Enigma.SpriteBoundingBoxMode BoundingBoxType { get; private set; }
+        public Enigma.Box BoundingBox { get; private set; }
         public byte AlphaTolerance { get; private set; }
         public List<Image> Frames { get; private set; }
     }

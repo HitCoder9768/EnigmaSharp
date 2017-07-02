@@ -74,7 +74,7 @@
             this.helpToolStripMenuItem});
             this.MenuStripMain.Location = new System.Drawing.Point(0, 0);
             this.MenuStripMain.Name = "MenuStripMain";
-            this.MenuStripMain.Size = new System.Drawing.Size(517, 24);
+            this.MenuStripMain.Size = new System.Drawing.Size(613, 24);
             this.MenuStripMain.TabIndex = 0;
             this.MenuStripMain.Text = "menuStrip1";
             // 
@@ -120,7 +120,7 @@
             this.ButtonNewScript});
             this.ToolStripMain.Location = new System.Drawing.Point(0, 24);
             this.ToolStripMain.Name = "ToolStripMain";
-            this.ToolStripMain.Size = new System.Drawing.Size(517, 25);
+            this.ToolStripMain.Size = new System.Drawing.Size(613, 25);
             this.ToolStripMain.TabIndex = 1;
             this.ToolStripMain.Text = "toolStrip1";
             // 
@@ -198,7 +198,7 @@
             treeNode15,
             treeNode16});
             this.ResourcesTreeView.SelectedImageIndex = 0;
-            this.ResourcesTreeView.Size = new System.Drawing.Size(163, 272);
+            this.ResourcesTreeView.Size = new System.Drawing.Size(163, 310);
             this.ResourcesTreeView.TabIndex = 3;
             this.ResourcesTreeView.DoubleClick += new System.EventHandler(this.ResourcesTreeView_DoubleClick);
             // 
@@ -206,7 +206,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(163, 49);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 272);
+            this.splitter1.Size = new System.Drawing.Size(3, 310);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -216,14 +216,14 @@
             this.TabsEditors.Location = new System.Drawing.Point(166, 49);
             this.TabsEditors.Name = "TabsEditors";
             this.TabsEditors.SelectedIndex = 0;
-            this.TabsEditors.Size = new System.Drawing.Size(351, 272);
+            this.TabsEditors.Size = new System.Drawing.Size(447, 310);
             this.TabsEditors.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 321);
+            this.ClientSize = new System.Drawing.Size(613, 359);
             this.Controls.Add(this.TabsEditors);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.ResourcesTreeView);

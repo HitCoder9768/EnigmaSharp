@@ -9,16 +9,12 @@ namespace EnigmaSharp
 {
     class Background
     {
-        public struct TileData
-        {
-            public int Width, Height, HorizontalOffset, VerticalOffset, HorizontalPadding, VerticalPadding;
-        }
         public string Name { get; private set; }
         public Image BackgroundImage { get; private set; }
         public bool SmoothEdges { get; private set; }
         public bool PreloadTexture { get; private set; }
         public bool Transparent { get; private set; }
         public bool UseAsTileSet { get; private set; }
-        public TileData TileProperties { get; private set; }
+        public Enigma.TileData TileProperties { get; private set; }
     }
 }

@@ -9,12 +9,6 @@ namespace EnigmaSharp
 {
     class Room
     {
-        // Structure for room's grid properties
-        // using a structure since we don't need a gridproperties anywhere else
-        public struct GridProperties{
-            public int HorizontalOffset,VerticalOffset,Width,Height;
-        }
-        
         // Room settings
         public string Name { get; private set; }
         public string Caption { get; private set; }
@@ -23,7 +17,7 @@ namespace EnigmaSharp
         public short Height { get; private set; }
         public int Speed { get; private set; }
         public bool Persistent { get; private set; }
-        public GridProperties Grid { get; private set; }
+        public Enigma.GridProperties Grid { get; private set; }
 
         // Room backgrounds
         public bool DrawBackgroundColour { get; private set; }

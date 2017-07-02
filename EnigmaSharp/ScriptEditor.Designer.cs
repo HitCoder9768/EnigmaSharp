@@ -95,6 +95,7 @@
             this.CodeEditorScintilla.TabIndex = 1;
             this.CodeEditorScintilla.TabWidth = 8;
             this.CodeEditorScintilla.UseTabs = true;
+            this.CodeEditorScintilla.StyleNeeded += new System.EventHandler<ScintillaNET.StyleNeededEventArgs>(this.CodeEditorScintilla_StyleNeeded);
             this.CodeEditorScintilla.UpdateUI += new System.EventHandler<ScintillaNET.UpdateUIEventArgs>(this.CodeEditorScintilla_UpdateUI);
             this.CodeEditorScintilla.TextChanged += new System.EventHandler(this.CodeEditorScintilla_TextChanged);
             // 
