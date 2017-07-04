@@ -8,17 +8,29 @@ namespace EnigmaSharp
 {
     public class Script
     {
-        public string Name { get; private set; }
-        public string Contents { get; private set; }
-
-        public void SetName(string PassedName)
+        private string _Name;
+        public string Name
         {
-            Name = PassedName;
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                _Name = value;
+            }
         }
-
-        public void SetContents(string Content)
+        private string _Content;
+        public string Content
         {
-            Contents = Content;
+            get
+            {
+                return _Content;
+            }
+            set
+            {
+                _Content = value;
+            }
         }
     }
 }

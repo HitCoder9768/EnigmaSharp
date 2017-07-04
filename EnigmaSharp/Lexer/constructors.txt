@@ -1,0 +1,1 @@
+if repeat while do for switch break continue exit var else until case default return with then begin end self other all noone global globalvar local

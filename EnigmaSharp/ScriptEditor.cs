@@ -23,13 +23,13 @@ namespace EnigmaSharp
             _node = passedNode;
             InitializeComponent();
             NameTextBox.Text = passedScript.Name;
-            CodeEditorScintilla.Text = passedScript.Contents;
+            CodeEditorScintilla.Text = passedScript.Content;
             _LexerElements = _LexerData;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            editorScript.SetName(NameTextBox.Text);
+            editorScript.Name = NameTextBox.Text;
             if (Parent!=null)
                 Parent.Text = NameTextBox.Text;
             _node.Text = NameTextBox.Text;
@@ -91,7 +91,7 @@ namespace EnigmaSharp
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            editorScript.SetContents(CodeEditorScintilla.Text);
+            editorScript.Content = CodeEditorScintilla.Text;
             if (Parent.Parent.GetType() == typeof(TabControl))
             {
                 TabControl t = (TabControl)Parent.Parent;
