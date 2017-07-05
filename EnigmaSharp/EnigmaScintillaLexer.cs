@@ -13,7 +13,7 @@ namespace EnigmaSharp
         public const int StyleDefault = 0;
         public const int StyleString = 1;
         public const int StyleNumber = 2;
-        public const int StyleConstructor = 3;
+        public const int StyleConstruct = 3;
         public const int StyleOperator = 4;
         public const int StyleVariable = 5;
         public const int StyleConstant = 6;
@@ -23,8 +23,6 @@ namespace EnigmaSharp
         private const int STATE_IDENTIFIER = 1;
         private const int STATE_NUMBER = 2;
         private const int STATE_STRING = 3;
-
-        private HashSet<string> _Constants, _Constructors, _Operators, _Variables, _Functions;
 
         public void Style(Scintilla scintilla, int startPos, int endPos)
         {
@@ -103,17 +101,15 @@ namespace EnigmaSharp
                         {
                             var style = StyleDefault;
                             var identifier = scintilla.GetTextRange(startPos - length, length);
-                            Console.WriteLine("Identifier: " + identifier);
-                            Console.WriteLine(_Constants.First());
-                            if (_Constants.Contains(identifier))
+                            if (SyntaxHighlightData.Constants.Contains(identifier))
                                 style = StyleConstant;
-                            if (_Constructors.Contains(identifier))
-                                style = StyleConstructor;
-                            if (_Operators.Contains(identifier))
+                            if (SyntaxHighlightData.Constructs.Contains(identifier))
+                                style = StyleConstruct;
+                            if (SyntaxHighlightData.Operators.Contains(identifier))
                                 style = StyleOperator;
-                            if (_Variables.Contains(identifier))
+                            if (SyntaxHighlightData.Variables.Contains(identifier))
                                 style = StyleVariable;
-                            if (_Functions.Contains(identifier))
+                            if (SyntaxHighlightData.Functions.Contains(identifier))
                                 style = StyleFunction;
 
                             scintilla.SetStyling(length, style);
@@ -125,20 +121,6 @@ namespace EnigmaSharp
                 }
                 startPos++;
             }
-        }
-
-        public EnigmaScintillaLexer(HashSet<string>[] Parts)
-        {
-            // Load constants
-            _Constants = Parts[0];
-            // Load constructors
-            _Constructors = Parts[1];
-            // Load variables
-            _Variables = Parts[2];
-            // Load operators
-            _Operators = Parts[3];
-            // Load functions
-            _Functions = Parts[4];
         }
     }
 }

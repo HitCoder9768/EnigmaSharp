@@ -20,7 +20,6 @@ namespace EnigmaSharp
         public MainForm()
         {
             InitializeComponent();
-            LoadData();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,17 +60,6 @@ namespace EnigmaSharp
             {
                 OpenScriptEditor(LocalScripts[ResourcesTreeView.SelectedNode.Index], ResourcesTreeView.SelectedNode);
             }
-        }
-
-        public void LoadData()
-        {
-            LoadLexerData();
-        }
-
-        public void LoadLexerData()
-        {
-            LexerImporter Importer = new LexerImporter();
-            _LexerData = Importer.LoadLexerData();
         }
     }
 }

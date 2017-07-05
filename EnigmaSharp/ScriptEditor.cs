@@ -57,7 +57,7 @@ namespace EnigmaSharp
 
             // lexer-specific
             CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleDefault].ForeColor = Color.Black;
-            CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleConstructor].ForeColor = Color.Blue;
+            CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleConstruct].ForeColor = Color.Blue;
             CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleOperator].ForeColor = Color.Blue;
             CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleVariable].ForeColor = Color.Red;
             CodeEditorScintilla.Styles[EnigmaScintillaLexer.StyleConstant].ForeColor = Color.SandyBrown;
@@ -103,7 +103,7 @@ namespace EnigmaSharp
         {
             var StartPosition = CodeEditorScintilla.GetEndStyled();
             var EndPosition = e.Position;
-            _lexer = new EnigmaScintillaLexer(_LexerElements);
+            _lexer = new EnigmaScintillaLexer();
             _lexer.Style(CodeEditorScintilla, StartPosition, EndPosition);
         }
     }
