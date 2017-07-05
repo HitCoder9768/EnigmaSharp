@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace EnigmaSharp
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         // Constants for the treeview
         private const int SCRIPTS = 4;
         List<Script> LocalScripts = new List<Script>();
         HashSet<String>[] _LexerData = new HashSet<string>[5];
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             LoadData();

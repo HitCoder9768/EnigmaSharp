@@ -1,6 +1,6 @@
 ﻿namespace EnigmaSharp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Sprites");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sounds");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Backgrounds");
@@ -219,7 +219,7 @@
             this.TabsEditors.Size = new System.Drawing.Size(447, 310);
             this.TabsEditors.TabIndex = 5;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,8 +230,8 @@
             this.Controls.Add(this.ToolStripMain);
             this.Controls.Add(this.MenuStripMain);
             this.MainMenuStrip = this.MenuStripMain;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "EnigmaSharp - New Project";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MenuStripMain.ResumeLayout(false);
             this.MenuStripMain.PerformLayout();
