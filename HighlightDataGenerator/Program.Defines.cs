@@ -88,9 +88,9 @@ PARAMETERS_DATA
         {
             "CONSTANTS_DATA",
             "CONSTRUCTS_DATA",
-            "VARIABLES_DATA",
-            "OPERATORS_DATA",
             "FUNCTIONS_DATA",
+            "OPERATORS_DATA",
+            "VARIABLES_DATA",
             "PARAMETERS_DATA"
         };
 
